@@ -1,73 +1,33 @@
-import React from 'react';
+import React from 'react'
+import axios from 'axios';
 
-/**
- * App
- *
- * Simple react js fetch example
- */
+import './App.css';
+
 class App extends React.Component {
 
+  state =  {stashes : '' };
 
 
-    /**
-     * constructor
-     *
-     * @object  @props  parent props
-     * @object  @state  component state
-     */
-    constructor(props) {
+  componentDidMount() {
+      this.fetchAdivice();
+  }
 
-        super(props);
+  fetchAdivice = () => {
+    axios.get('http://api.pathofexile.com/public-stash-tabs ')
+      .then((response) => {
+        const {stashes} = response.data;
+        this.setState({stashes});
+        console.log(stashes)
 
-        this.state = {
-            items: [],
-            isLoaded: false
-        }
-    }
+      })
+      .catch((error) => {
+        console.log(error)
+      });
+  }
 
-    /**
-     * componentDidMount
-     *
-     * Fetch json array of objects from given url and update state.
-     */
-
-
-    componentDidMount() {
-            fetch('http://api.pathofexile.com/public-stash-tabs')
-                .then(res =>  this.setState({
-                        isLoaded: true,
-                        items: res.data.items,
-                    })
-                );
-        }
-
-
-    /**
-     * render
-     *
-     * Render UI
-     */
-    render() {
-
-        const { isLoaded, items } = this.state;
-
-        if (!isLoaded)
-          return <div>Loading...</div>;
-
-          return (
-              <div className="App">
-                  <ul>
-                      {items.react.map(item => (
-                          <li key={item.id}>
-                              {item}
-                          </li>
-                      ))}
-                  </ul>
-              </div>
-        );
-
-    }
-
+  render() {
+    return (<h1>asad</h1>);
+  }
 }
 
 export default App;
