@@ -1,0 +1,81 @@
+#root, #type, #map, html, body {
+  margin: 0;
+  padding: 0;
+  height: 98vh;
+  box-sizing: border-box;
+}
+
+.app {
+  height: 100%;
+  background: linear-gradient( rgba(0, 0, 13, 01), rgba(0, 0, 13, 1) );
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  text-align: center;
+  padding-top: 10px;
+}
+
+
+.card {
+  background: whitesmoke;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 2%;
+  box-shadow: 10px 10px;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  height: 582px;
+}
+.map {
+  background: whitesmoke;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: top;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 5%;
+  font-size: 2em;
+ 
+}
+.css-2b097c-container {
+  width: 100%;
+}
+
+.form {
+  background: whitesmoke;
+  width: 40%;
+  height: 20%;
+  display: flex;
+  justify-content: top;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 2%;
+  box-shadow: 10px 10px;
+  font-size: 3em;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+      width: 90%;
+      height: 100%;
+  }
+  .map {
+    width: 90%;
+    height: 100%;
+  }
+  .form {
+    width: 90%;
+    height: 100%;
+}
+}
+
